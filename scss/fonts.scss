@@ -1,0 +1,18 @@
+@font-face {
+    src: url(../fonts/AnonymousPro-Regular.ttf);
+    font-family: "Anonymous";
+}
+
+@font-face {
+    src: url(../fonts/AnonymousPro-Bold.ttf);
+    font-family: "AnonymousBold";
+}
+
+@font-face {
+    src: url(../fonts/GT-Pressura-Mono-Regular.ttf);
+    font-family: "GT";
+}
+
+$font: "Anonymous", sans-serif;
+$fontBold: "AnonymousBold", sans-serif;
+$fontGT: "GT", sans-serif;
