@@ -42,7 +42,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="./css/init.css">
+    <link rel="stylesheet" href="/css/init.css">
 </head>
 <body>
     <div class="wrapper">
