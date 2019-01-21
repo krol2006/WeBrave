@@ -156,8 +156,6 @@ body {
 
             &:hover {
                 display: inline-block;
-                transform: rotate(10deg);
-                transition: transform .2s;
                 animation-name: intro;
                 animation-duration: 1s;
                 animation-iteration-count: 1;
