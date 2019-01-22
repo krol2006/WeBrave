@@ -1,36 +1,35 @@
 <?php 
+
+
     if (isset($_COOKIE['language'])) {
         $langCode = $_COOKIE['language'];
     } else {
         $langCode = 'ru';
     }
-    include $_SERVER['DOCUMENT_ROOT'].'/content/lang_'.$langCode.'.php';
+    require './content/lang_'.$langCode.'.php';
 
-    if(isset($_SERVER['REDIRECT_URL'])) {
-        $request = $_SERVER['REDIRECT_URL'];
-
-        switch ($request) {
-            case '/about':
-                $title = $lang['about'];
-                break;
-            case '/services':
-                $title = $lang['services'];                          
-                break;
-            case '/folio':
-                $title = $lang['folio']; 
-                break;
-            case '/contacts':
-                $title = $lang['contacts'];
-                break;
-            case '/service':
-                $title = $lang['servicesList'][$_GET['id']]['title'];
-                break;
-            default:
-                $title = $lang['error'];
-                break;
-        }
-    } else {
-        $title = $lang['title'];
+    switch ($_SERVER['REQUEST_URI']) {
+        case '/':
+            $title = $lang['title'];
+            break;
+        case '':
+            $title = $lang['title'];
+            break;
+        case '/services':
+            $title = $lang['services'];                          
+            break;
+        case '/folio':
+            $title = $lang['folio']; 
+            break;
+        case '/contacts':
+            $title = $lang['contacts'];
+            break;
+        case '/service':
+            $title = $lang['servicesList'][$_GET['id']]['title'];
+            break;
+        default:
+            $title = $lang['error'];
+            break;
     }
 ?>
 
@@ -48,37 +47,31 @@
     <div class="wrapper">
         <main class="content">
             <?php
-                if(isset($_SERVER['REDIRECT_URL'])) {
-                    $request = $_SERVER['REDIRECT_URL'];
-        
-                    switch ($request) {
-                        case '/':
-                            require __DIR__ . '/views/main.php';
-                            break;
-                        case '':
-                            require __DIR__ . '/views/main.php';
-                            break;
-                        case '/about':
-                            require __DIR__ . '/views/about.php';
-                            break;
-                        case '/services':
-                            require __DIR__ . '/views/services.php';                            
-                            break;
-                        case '/folio':
-                            require __DIR__ . '/views/folio.php';
-                            break;
-                        case '/contacts':
-                            require __DIR__ . '/views/contacts.php';
-                            break;
-                        case '/service':
-                            require __DIR__ . '/views/service.php';
-                            break;
-                        default:
-                            require __DIR__ . '/views/404.php';
-                            break;
-                    }
-                } else {
-                    require __DIR__ . '/views/main.php';
+                switch ($_SERVER['REQUEST_URI']) {
+                    case '/':
+                        require './views/main.php';
+                        break;
+                    case '':
+                        require './views/main.php';
+                        break;
+                    case '/about':
+                        require './views/about.php';
+                        break;
+                    case '/services':
+                        require './views/services.php';                            
+                        break;
+                    case '/service?id=<?= $_GET["id"]':
+                        require './views/service.php';
+                        break;
+                    case '/folio':
+                        require './views/folio.php';
+                        break;
+                    case '/contacts':
+                        require './views/contacts.php';
+                        break;                    
+                    default:
+                        require './views/404.php';
+                        break;
                 }
             ?>
         </main>
