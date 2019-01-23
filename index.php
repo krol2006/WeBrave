@@ -22,7 +22,7 @@
         case '/contacts':
             $title = $lang['contacts'];
             break;
-        case '/service':
+        case preg_match('/id=[0-9]*/', '/service?'):
             $title = $lang['servicesList'][$_GET['id']]['title'];
             break;
         default:
@@ -58,15 +58,15 @@
                     case '/services':
                         require './views/services.php';                            
                         break;
-                    case '/service?id=<?= $_GET["id"]':
-                        require './views/service.php';
-                        break;
                     case '/folio':
                         require './views/folio.php';
                         break;
                     case '/contacts':
                         require './views/contacts.php';
-                        break;                    
+                        break;    
+                    case preg_match('/id=([0-9]+)/', '/service?', $matches):
+                        require './views/service.php';
+                        break;
                     default:
                         require './views/404.php';
                         break;
@@ -75,11 +75,30 @@
         </main>
 
         <aside class="sidebar">
+<<<<<<< HEAD
             <div class="sidebar__layout">
                 <div class="sidebar__langs">
                     <ul class="sidebar__langs__list">
                         <li class="sidebar__langs__item">
                             <a href="#" data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
+=======
+            <div class="sidebar__langs">
+                <ul class="sidebar__langs__list">
+                    <li class="sidebar__langs__item">
+                        <a href="#" data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
+                    </li>
+                    <li class="sidebar__langs__item">
+                        <a href="#" data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
+                    </li>                    
+                </ul>
+            </div>
+
+            <div class="sidebar__menu">
+                <ul class="sidebar__menu__list">
+                    <?php foreach($lang['menu'] as $menuItem): ?>
+                        <li class="sidebar__menu__item">
+                            <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $_SERVER['REQUEST_URI'] ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+>>>>>>> f846de9467fff2bfda3954eca5849e06d66297ee
                         </li>
                         <li class="sidebar__langs__item">
                             <a href="#" data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
