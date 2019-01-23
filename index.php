@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
     if (isset($_COOKIE['language'])) {
         $langCode = $_COOKIE['language'];
     } else {
@@ -77,43 +75,48 @@
         </main>
 
         <aside class="sidebar">
-            <div class="sidebar__langs">
-                <ul class="sidebar__langs__list">
-                    <li class="sidebar__langs__item">
-                        <a href="#" data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
-                    </li>
-                    <li class="sidebar__langs__item">
-                        <a href="#" data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
-                    </li>                    
-                </ul>
-            </div>
-
-            <div class="sidebar__menu">
-                <ul class="sidebar__menu__list">
-                    <?php foreach($lang['menu'] as $menuItem): ?>
-                        <li class="sidebar__menu__item">
-                            <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $request ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+            <div class="sidebar__layout">
+                <div class="sidebar__langs">
+                    <ul class="sidebar__langs__list">
+                        <li class="sidebar__langs__item">
+                            <a href="#" data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
                         </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
+                        <li class="sidebar__langs__item">
+                            <a href="#" data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
+                        </li>                    
+                    </ul>
+                </div>
 
-            <div class="sidebar__socials">
-                <ul class="sidebar__socials__list">
-                    <li class="sidebar__socials__item">
-                        <a href="#" class="sidebar__socials__link sidebar__socials__link--fb"></a>
-                    </li>
-                    <li class="sidebar__socials__item">
-                        <a href="#" class="sidebar__socials__link sidebar__socials__link--in"></a>
-                    </li>
-                    <li class="sidebar__socials__item">
-                        <a href="#" class="sidebar__socials__link sidebar__socials__link--tw"></a>
-                    </li>
-                </ul>
+                <div class="sidebar__menu">
+                    <ul class="sidebar__menu__list">
+                        <?php foreach($lang['menu'] as $menuItem): ?>
+                            <li class="sidebar__menu__item">
+                                <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $request ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="sidebar__socials">
+                    <ul class="sidebar__socials__list">
+                        <li class="sidebar__socials__item">
+                            <a href="#" class="sidebar__socials__link sidebar__socials__link--fb"></a>
+                        </li>
+                        <li class="sidebar__socials__item">
+                            <a href="#" class="sidebar__socials__link sidebar__socials__link--in"></a>
+                        </li>
+                        <li class="sidebar__socials__item">
+                            <a href="#" class="sidebar__socials__link sidebar__socials__link--tw"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </aside>
     </div>
 
+    <script src="js/photoswipe.min.js"></script>
+    <script src="js/photoswipe-ui-default.min.js"></script> 
+    <script src="js/photoswipe-gallery.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

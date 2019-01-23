@@ -30,7 +30,7 @@
     </div>
 
     <div class="form__submit">
-        <button type="submit"><?= $lang['sendRequest']; ?></button>
+        <button type="submit" class="button"><?= $lang['sendRequest']; ?></button>
     </div>
 </form>
 

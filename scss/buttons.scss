@@ -1,0 +1,16 @@
+.button {
+    background: #292929;
+    color: white;
+    font: 16px $fontBold;
+    letter-spacing: 2px;
+    border: none;
+    height: 48px;
+    width: 272px;
+    cursor: pointer;
+
+    &:hover {
+        animation-name: swing;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+}

@@ -53,6 +53,6 @@
     </div>
 
     <div class="form__submit">
-        <button type="submit"><?= $lang['sendRequest']; ?></button>
+        <button class="button" type="submit"><?= $lang['sendRequest']; ?></button>
     </div>
 </form>
