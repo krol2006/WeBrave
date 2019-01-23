@@ -24,7 +24,7 @@
         case '/contacts':
             $title = $lang['contacts'];
             break;
-        case '/service':
+        case preg_match('/id=[0-9]*/', '/service?'):
             $title = $lang['servicesList'][$_GET['id']]['title'];
             break;
         default:
@@ -60,15 +60,15 @@
                     case '/services':
                         require './views/services.php';                            
                         break;
-                    case '/service?id=<?= $_GET["id"] ?>':
-                        require './views/service.php';
-                        break;
                     case '/folio':
                         require './views/folio.php';
                         break;
                     case '/contacts':
                         require './views/contacts.php';
-                        break;                    
+                        break;    
+                    case preg_match('/id=([0-9]+)/', '/service?', $matches):
+                        require './views/service.php';
+                        break;
                     default:
                         require './views/404.php';
                         break;
@@ -92,7 +92,7 @@
                 <ul class="sidebar__menu__list">
                     <?php foreach($lang['menu'] as $menuItem): ?>
                         <li class="sidebar__menu__item">
-                            <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $request ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+                            <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $_SERVER['REQUEST_URI'] ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>

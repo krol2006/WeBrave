@@ -12,7 +12,7 @@
         <div class="services__item">
             <div class="services__item__layout">
                 <div class="services__item__title">
-                    <a href='/service?id=<?= $servicesItem["id"] ?>'><?= $servicesItem['title']; ?></a>
+                    <a href='?id=<?= $servicesItem["id"]; ?>'><?= $servicesItem['title']; ?></a>
                 </div>
 
                 <div class="services__item__text">
