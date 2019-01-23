@@ -60,7 +60,7 @@
                     case '/services':
                         require './views/services.php';                            
                         break;
-                    case '/service?id=<?= $_GET["id"]':
+                    case '/service?id=<?= $_GET["id"] ?>':
                         require './views/service.php';
                         break;
                     case '/folio':
