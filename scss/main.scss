@@ -160,6 +160,9 @@ body {
             color: $green;
             text-decoration: none;
             padding-top: 15px;
+            animation-name: arrow;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
 
             &:hover {
                 display: inline-block;
@@ -380,6 +383,9 @@ body {
                 position: relative;
                 padding-right: 60px;
                 line-height: 30px;
+                animation-name: arrow;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
 
                 &::before, &::after {
                     position: absolute;

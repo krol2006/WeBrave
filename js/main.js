@@ -27,6 +27,6 @@ window.onload = function() {
 
 
     initPhotoSwipeFromDOM('.my-simple-gallery');
-
+    
 
 }

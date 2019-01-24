@@ -91,7 +91,7 @@
                     <ul class="sidebar__menu__list">
                         <?php foreach($lang['menu'] as $menuItem): ?>
                             <li class="sidebar__menu__item">
-                                <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $request ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+                                <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $_SERVER['REQUEST_URI'] ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
