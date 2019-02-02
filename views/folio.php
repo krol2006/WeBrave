@@ -9,18 +9,21 @@
 <div class="folio">
 <div class="gallery-container">
   
-  <div class="my-simple-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    <?php foreach($lang['portfolioItems'] as $item): ?>
-    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href='/images/<?= $item["image"] ?>' itemprop="contentUrl" data-size="1200x700">
-          <img src='/images/<?= $item["image"] ?>' itemprop="thumbnail" alt="Image description" />
-      </a>
-        <figcaption itemprop="caption description">Image caption  1</figcaption>
-                                          
+  <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    <?php foreach($lang['portfolioItems'] as $i => $item): ?>
+    <figure class="folio__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a class="folio__item__link" href='/images/<?= $item["image"] ?>' itemprop="contentUrl" data-size="1200x700">
+            <img src='/images/<?= $item["image"] ?>' itemprop="thumbnail" alt="Image description" />
+        </a> 
+
+        <div class="folio__item__desc">
+            <p class="folio__item__id"><?= $item['id']; ?></p>
+            <figcaption class="folio__item__text" itemprop="caption description"><?= $item['text']; ?></figcaption>
+            <a href="/images/<?= $item["image"] ?>" class="folio__item__more">Подробнее</a>
+        </div>
     </figure>
 
     <?php endforeach; ?>
-
   </div>
   
   <!-- Root element of PhotoSwipe. Must have class pswp. -->

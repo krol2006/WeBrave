@@ -35,7 +35,7 @@
 <html lang="<?= $langCode ?>">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -43,6 +43,12 @@
 </head>
 <body>
     <div class="wrapper">
+        <button type="button" class="sidebar__toggle">
+            <span class="sidebar__toggle__box">
+                <span class="sidebar__toggle__inner"></span>
+            </span>
+        </button>
+
         <main class="content">
             <?php
                 switch ($_SERVER['REQUEST_URI']) {
@@ -97,6 +103,11 @@
                     </ul>
                 </div>
 
+                <div class="sidebar__contacts">
+                    <a href="mailto:info@webrave.cz">info@webrave.cz</a>
+                    <a href="tel:+420778898563">+420 778-898-563</a>
+                </div>
+
                 <div class="sidebar__socials">
                     <ul class="sidebar__socials__list">
                         <li class="sidebar__socials__item">
@@ -114,9 +125,13 @@
         </aside>
     </div>
 
+    <?php 
+        if ($_SERVER['REQUEST_URI'] == '/folio'):
+    ?>
     <script src="js/photoswipe.min.js"></script>
     <script src="js/photoswipe-ui-default.min.js"></script> 
     <script src="js/photoswipe-gallery.js"></script>
+    <?php endif; ?>
     <script src="js/main.js"></script>
 </body>
 </html>

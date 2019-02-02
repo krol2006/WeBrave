@@ -25,5 +25,21 @@
             </div>
         </div>
         <?php endforeach; ?>
+
+        <div class="services__item">
+            <div class="services__item__layout">
+                <div class="services__item__title">
+                    <a href='http://seorave.cz' target="_blank"><?= $lang['SEOservice']['title']; ?></a>
+                </div>
+
+                <div class="services__item__text">
+                    <p><?= mb_strimwidth($lang['SEOservice']['text'], 0, 155, "..."); ?></p>
+                </div>
+            </div>
+
+            <div class="services__item__more">
+                <a href='http://seorave.cz' target="_blank"><?= $lang['more']; ?></a>
+            </div>
+        </div>
     </div>
 </div>
