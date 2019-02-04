@@ -3,7 +3,7 @@
         <a href="/" class="header__logo__link">webrave</a>
     </div>
 
-    <h1 class="header__title"><?= $lang['contacts'] ?></h1>
+    <h1 class="header__title"><?= $lang['contacts']; ?></h1>
 </div>
 
 <form method="POST" action="#" class="form">

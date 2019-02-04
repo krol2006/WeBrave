@@ -11,6 +11,7 @@ window.onload = function() {
     const sidebar = document.querySelector('.sidebar');
     const sidebarToggle = document.querySelector('.sidebar__toggle');
     const form = document.querySelector('.form');
+    const folioMore = document.querySelector('.folio__more__button');
 
     btns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -63,18 +64,11 @@ window.onload = function() {
                 return;
             }
 
-
             if (!formData.get('phone') || formData.get('phone') === '' || !formData.get('phone').match(/\d/g)) {
                 console.log('Enter the phone');
                 return;
             }
 
-            const name = formData.get('name');
-            const phone = formData.get('phone');
-            const email = formData.get('email');
-            const message = formData.get('message');
-    
-            console.log('send data');
             const xhr = new XMLHttpRequest();
             xhr.open("POST", 'views/processContacts.php', true);
             xhr.onreadystatechange = function() {

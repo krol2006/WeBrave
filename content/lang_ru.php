@@ -83,67 +83,80 @@
             0 => array(
                 'id' => '01',
                 'image' => '3.png',
+                'full' => 'full1.jpg',
                 'text' => 'Innovate and Engage with Employee Ideas'
             ),
             1 => array(
                 'id' => '02',
                 'image' => '4.png',
+                'full' => 'full2.jpg',
                 'text' => 'La shoopa'
             ),
             2 => array(
                 'id' => '03',
                 'image' => '1.png',
+                'full' => 'full3.jpg',
                 'text' => 'Discovery'
             ),
             3 => array(
                 'id' => '04',
                 'image' => '2.png',
+                'full' => 'full4.jpg',
                 'text' => 'We love design'
             ),
             4 => array(
                 'id' => '05',
                 'image' => '5.png',
+                'full' => 'full5.jpg',
                 'text' => 'Beauty Salon Victoria'
             ),
             5 => array(
                 'id' => '06',
                 'image' => '6.png',
+                'full' => 'full6.jpg',
                 'text' => 'Chenker'
             ),
             6 => array(
                 'id' => '07',
                 'image' => '7.png',
+                'full' => 'full7.jpg',
                 'text' => 'Vape Shop'
             ),
             7 => array(
                 'id' => '08',
                 'image' => '8.png',
+                'full' => 'full8.jpg',
                 'text' => 'Job Connector'
             ),
             8 => array(
                 'id' => '09',
                 'image' => '9.png',
+                'full' => 'full9.jpg',
                 'text' => 'Satory Excellent'
             ),
             9 => array(
                 'id' => '10',
                 'image' => '10.png',
+                'full' => 'full10.jpg',
                 'text' => 'VPS Room'
             ),
-            // 10 => array(
-            //     'id' => '11',
-            //     'image' => '12.png',
-            //     'text' => 'Slothaus'
-            // ),
             10 => array(
                 'id' => '11',
                 'image' => '13.png',
+                'full' => 'full11.jpg',
                 'text' => 'Cztax'
             ),
             11 => array(
                 'id' => '12',
                 'image' => '14.png',
+                'full' => 'full12.jpg',
                 'text' => 'SmileDJ'
+            ),
+            12 => array(
+                'id' => '13',
+                'image' => '12.png',
+                'full' => 'full13.jpg',
+                'text' => 'Slothaus'
             )
         ),
         'aboutText' => '<strong>WEBRAVE</strong> - студия по разработке сайтов в Праге, занимается своей деятельностью уже на протяжении 5ти лет, за это время мы успели пройти много препятствий, испытаний, получить много опыта и научились находить индивидуальный подход к каждому Клиенту. Наши разработчики постоянно, в обязательном порядке проходят курсы повышения квалиффикации, дабы разбираться и владеть всеми трендами в разработке нынешнего времени. И это все для того, что бы при создании проекта обеспечить сайт Клиента, лучшей скоростью работы, полноценной защитой, современным дизайном, удобством и отличным качеством.',
