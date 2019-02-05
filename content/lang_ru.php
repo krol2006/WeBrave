@@ -96,7 +96,7 @@
                 'id' => '03',
                 'image' => '1.png',
                 'full' => 'full3.jpg',
-                'text' => 'Discovery'
+                'text' => 'Animal Happy'
             ),
             3 => array(
                 'id' => '04',
