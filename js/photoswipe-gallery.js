@@ -138,7 +138,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
         // define options (if needed)
         options = {
-
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
@@ -149,7 +148,16 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
                     rect = thumbnail.getBoundingClientRect();
 
                 return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
-            }
+            },
+             getDoubleTapZoom: function(isMouseClick, item) {
+
+                if(isMouseClick) {
+                    return 0.6; //<---- This 4
+                } else {
+                    return item.initialZoomLevel < 0.5 ? 0.6 : 1.33; //<---- 4 here
+                }
+            },
+            maxSpreadZoom: 0.6 //<---- and this 4 here
 
         };
 
