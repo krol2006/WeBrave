@@ -1001,6 +1001,10 @@ body {
                     color: transparent;
                 }
             }
+
+            &.error {
+                border-bottom-color: red;
+            }
         }
 
         textarea {

@@ -60,20 +60,20 @@ window.onload = function() {
             const formData = new FormData($this);
 
             if (!formData.get('name') || formData.get('name') === '') {
-                console.log('Enter the name');
+                $this.querySelector('[name="name"]').classList.add('error');
                 return;
             }
 
             if (!formData.get('phone') || formData.get('phone') === '' || !formData.get('phone').match(/\d/g)) {
-                console.log('Enter the phone');
+                $this.querySelector('[name="phone"]').classList.add('error');
                 return;
             }
 
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", 'views/processContacts.php', true);
+            xhr.open("POST", 'views/form.php', true);
             xhr.onreadystatechange = function() {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    form.innerHTML = "Form was sent!";
+                    form.innerHTML = this.responseText;
                 }
             }
             xhr.send(formData);

@@ -126,7 +126,7 @@
     </div>
 
     <?php 
-        if ($_SERVER['REQUEST_URI'] == '/folio'):
+    if ($_SERVER['REQUEST_URI'] == '/folio'):
     ?>
     <script src="js/photoswipe.min.js"></script>
     <script src="js/photoswipe-ui-default.min.js"></script> 

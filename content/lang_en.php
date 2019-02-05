@@ -18,6 +18,7 @@
         'depends' => 'Depends on the options you choose.',
         'sendRequest' => 'Send request',
         'contactUs' => 'Contact us',
+        'formSent' => 'Form was sent!',
         'menu' => array(
             0 => array(
                 'name' => 'Services',
