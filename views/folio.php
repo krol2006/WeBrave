@@ -21,7 +21,7 @@
             <div class="folio__item__desc">
                 <p class="folio__item__id"><?= $item['id']; ?></p>
                 <figcaption class="folio__item__text" itemprop="caption description"><?= $item['text']; ?></figcaption>
-                <a href="/images/<?= $item["full"] ?>" class="folio__item__more">Подробнее</a>
+                <a href="/images/<?= $item["full"] ?>" class="folio__item__more"><?= $lang['more']; ?></a>
             </div>
         </figure>
         <?php endforeach; ?>
