@@ -1079,6 +1079,9 @@ body {
             margin-bottom: 30px;
             position: relative;
             padding-left: 60px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
 
             @include breakpoint($sm) {
                 padding-left: 54px;
