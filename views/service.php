@@ -30,25 +30,27 @@
 </div>
 
 <form method="POST" action="#" class="form">
+    <input type="hidden" value="<?= $service['title']; ?>" name="site">
+
     <div class="form__title">
         <p><?= $service['sendRequest']; ?></p>
     </div>
 
     <div class="form__layout">
         <div class="form__input">
-            <input type="text" placeholder='<?= $lang["name"]; ?>'>
+            <input type="text" placeholder='<?= $lang["name"]; ?>' name="name">
         </div>
 
         <div class="form__input">
-            <input type="tel" placeholder='<?= $lang["phone"]; ?>'>
+            <input type="tel" placeholder='<?= $lang["phone"]; ?>' name="phone">
         </div>
 
         <div class="form__input">
-            <input type="email" placeholder='<?= $lang["email"]; ?>'>
+            <input type="email" placeholder='<?= $lang["email"]; ?>' name="email">
         </div>
 
         <div class="form__input">
-            <textarea placeholder='<?= $lang["message"]; ?>'></textarea>
+            <textarea placeholder='<?= $lang["message"]; ?>' name="message"></textarea>
         </div>
     </div>
 
