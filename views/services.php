@@ -21,7 +21,7 @@
             </div>
 
             <div class="services__item__more">
-                <a href='/service?id=<?= $servicesItem["id"]; ?>'><?= $lang['more']; ?></a>
+                <a href='?id=<?= $servicesItem["id"]; ?>'><?= $lang['more']; ?></a>
             </div>
         </div>
         <?php endforeach; ?>

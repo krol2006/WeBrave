@@ -14,21 +14,22 @@
             $title = $lang['title'];
             break;
         case '/services':
-            $title = $lang['services'];                          
+            $title = $lang['services'];
             break;
         case '/folio':
-            $title = $lang['folio']; 
+            $title = $lang['folio'];
             break;
         case '/contacts':
             $title = $lang['contacts'];
             break;
-        case preg_match('/id=[0-9]*/', '/service?'):
-            $title = $lang['servicesList'][$_GET['id']]['title'];
-            break;
         default:
-            $title = $lang['error'];
+            if(isset($_GET['id'])) {
+                $title = $lang['servicesList'][$_GET['id']]['title'];
+            } else {
+                $title = $lang['error'];
+            }
             break;
-    }
+    };
 ?>
 
 <!doctype html>
@@ -37,7 +38,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= $title ?></title>
+    <title><?= 'Webrave | '.$title; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/init.css">
 </head>
@@ -50,7 +51,7 @@
         </button>
 
         <main class="content">
-            <?php
+            <?php 
                 switch ($_SERVER['REQUEST_URI']) {
                     case '/':
                         require './views/main.php';
@@ -58,10 +59,7 @@
                     case '':
                         require './views/main.php';
                         break;
-                    case '/about':
-                        require './views/about.php';
-                        break;
-                    case '/services':
+                    case '/services':                
                         require './views/services.php';                            
                         break;
                     case '/folio':
@@ -69,14 +67,15 @@
                         break;
                     case '/contacts':
                         require './views/contacts.php';
-                        break;    
-                    case preg_match('/id=([0-9]+)/', '/service?', $matches):
-                        require './views/service.php';
                         break;
                     default:
-                        require './views/404.php';
+                        if(isset($_GET['id'])) {
+                            require './views/service.php';
+                        } else {
+                            require './views/404.php';
+                        }
                         break;
-                }
+                };
             ?>
         </main>
 

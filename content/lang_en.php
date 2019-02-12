@@ -1,6 +1,6 @@
 <?php
     $lang = [
-        'title' => 'Webrave | Creation and promotion of sites in Prague',
+        'title' => 'Creation and promotion of sites in Prague',
         'about' => 'About us',
         'services' => 'Services for the creation, development and promotion of sites in Prague',
         'contacts' => 'Contacts',
