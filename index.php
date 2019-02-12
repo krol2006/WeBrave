@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="/css/init.css">
 </head>
 <body>
+    <?php if ($_SERVER['REQUEST_URI'] !== '/admin') { ?>
+
     <div class="wrapper">
         <button type="button" class="sidebar__toggle">
             <span class="sidebar__toggle__box">
@@ -132,6 +134,10 @@
     <script src="js/photoswipe-gallery.js"></script>
     <?php endif; ?>
     <script src="js/main.js"></script>
+
+    <?php } else {
+        require './admin/index.php';
+    } ?>
 </body>
 </html>
 

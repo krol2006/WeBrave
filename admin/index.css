@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.form {
+
+}
+
+.form__input {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    padding-left: 20px;
+    min-width: 200px;
+}
+
+[type="text"] {
+    height: 30px;
+    min-width: 700px;
+}
