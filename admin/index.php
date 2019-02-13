@@ -1,30 +1,11 @@
 <?php 
-	require ('vendor/autoload.php');
     require ('../content/lang_ru.php');
 
-    use Medoo\Medoo;
-
-    $db = new Medoo([
-        'database_type' => 'mysql',
-        'database_name' => 'webrave',
-        'server' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'charset' => 'utf8mb4'
-    ]);
-
-    $data = $db->select('menu', [
-        'name',
-        'url'
-    ], [
-        'lang' => 'ru'
-    ]);
-
-   
-
-    foreach($data as $key => $item) {
-        echo $item['name'];
-    }
+    // $db = new Mongo('mongodb://localhost', [
+    //     'db' => 'webrave'
+    // ]);
+phpinfo();
+    echo "ok";
 ?>
 
 <!DOCTYPE html>
