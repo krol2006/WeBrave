@@ -2,10 +2,15 @@
     $lang = [
         'title' => 'Creation and promotion of sites in Prague',
         'about' => 'About us',
-        'services' => 'Services for the creation, development and promotion of sites in Prague',
+        'services' => 'Services for the creation, development and <a href="http://seorave.cz" target="_blank">promotion</a> of sites in Prague',
         'contacts' => 'Contacts',
         'error' => 'Page not found',
         'folio' => 'Portfolio',
+        'mainDescription' => 'Creation and promotion of sites in Prague - studio engaged in the development of websites in Prague, which is engaged in the fact that we successfully overcome many obstacles, trials, we gain a lot of experience',
+        'servicesDescription' => 'Services for the creation, development and promotion of sites in Prague | Landing page | Brochure website | Corporate website | E-shop | SEO-site optimization',
+        'contactsDescription' => 'Services for the creation, development and promotion of sites in Prague | Landing page | Brochure website | Corporate website | E-shop | SEO-site optimization',
+        'folioDescription' => 'Services for the creation, development and promotion of sites in Prague | Landing page | Brochure website | Corporate website | E-shop | SEO-site optimization',
+        'errorDescription' => 'Services for the creation, development and promotion of sites in Prague | Landing page | Brochure website | Corporate website | E-shop | SEO-site optimization',
         'intro' => 'Creation and <a href="http://seorave.cz" target="_blank">promotion</a> of sites in Prague',
         'price' => 'Price',
         'more' => 'More',
@@ -45,7 +50,8 @@
                 'deadline' => 'The term of the Landing page development is from 7 to 14 days.',
                 'priceMin' => '8 000 CZK',
                 'priceMax' => '12 000 CZK',
-                'sendRequest' => 'Send a request to create Landing page'
+                'sendRequest' => 'Send a request to create Landing page',
+                'metaDescription' => 'Creation and development of Landing page is a simple site where all information is placed on one page and can be viewed by scrolling'
             ],
             [
                 'id' => 1,
@@ -54,7 +60,8 @@
                 'deadline' => 'The term of the brochure website development is from 7 to 14 days.',
                 'priceMin' => '10 000 CZK',
                 'priceMax' => '15 000 CZK',
-                'sendRequest' => 'Send a request to create brochure website'
+                'sendRequest' => 'Send a request to create brochure website',
+                'metaDescription' => 'Creation and development of brochure website is not a complex multi-page website describing the activities of your company and a variety of services, the site will include a gallery, feedback form'
             ],
             [
                 'id' => 2,
@@ -63,7 +70,8 @@
                 'deadline' => 'The term of the corporate website development is from 1 to 3 weeks.',
                 'priceMin' => '15 000 CZK',
                 'priceMax' => '20 000 CZK',
-                'sendRequest' => 'Send a request to create corporate website'
+                'sendRequest' => 'Send a request to create corporate website',
+                'metaDescription' => 'Creation and development of corporate website is an average project with a large number of pages on which you can place information about your company, catalogs, services, products, galleries, news, contact forms'
             ],
             [
                 'id' => 3,
@@ -72,12 +80,14 @@
                 'deadline' => 'The term of the e-shop website development is from 2 to 4 weeks.',
                 'priceMin' => '30 000 CZK',
                 'priceMax' => '45 000 CZK',
-                'sendRequest' => 'Send a request to create e-shop'
+                'sendRequest' => 'Send a request to create e-shop',
+                'metaDescription' => 'Creation and development of e-shop is a large project with extensive functionality, different types of filters, product card, shopping cart and different payment means'
             ]
         ],
         'SEOservice' => [
             'title' => 'Promotion, SEO-site optimization',
-            'text' => 'Why do you need a site, if there are thousands of similar sites in web?<br>Order optimization, be at the Top of search networks!'
+            'text' => 'Why do you need a site, if there are thousands of similar sites in web?<br>Order optimization, be at the Top of search networks!',
+            'metaDescription' => 'Meta description'
         ],
         'portfolioItems' => [
             [

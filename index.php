@@ -9,24 +9,30 @@
     switch ($_SERVER['REQUEST_URI']) {
         case '/':
             $title = $lang['title'];
+            $desc = $lang['mainDescription'];
             break;
         case '':
             $title = $lang['title'];
+            $desc = $lang['mainDescription'];
             break;
         case '/services':
             $title = $lang['services'];
+            $desc = $lang['servicesDescription'];
             break;
         case '/folio':
             $title = $lang['folio'];
+            $desc = $lang['folioDescription'];
             break;
         case '/contacts':
             $title = $lang['contacts'];
+            $desc = $lang['contactsDescription'];
             break;
         default:
             if(isset($_GET['id'])) {
                 $title = $lang['servicesList'][$_GET['id']]['title'];
             } else {
                 $title = $lang['error'];
+                $desc = $lang['errorDescription'];
             }
             break;
     };
@@ -38,13 +44,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php if(isset($desc)): ?>
+    <meta name="description" content="<?= $desc; ?>">
+    <?php endif; ?>
     <title><?= 'Webrave | '.$title; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/init.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134637839-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134637839-1');
+    </script>
 </head>
 <body>
-    <?php if ($_SERVER['REQUEST_URI'] !== '/admin') { ?>
-
     <div class="wrapper">
         <button type="button" class="sidebar__toggle">
             <span class="sidebar__toggle__box">
@@ -82,6 +98,10 @@
         </main>
 
         <aside class="sidebar">
+            <div class="anim" id="anim">  	 
+                <canvas id="animCanvas"></canvas>
+            </div>
+
             <div class="sidebar__layout">
                 <div class="sidebar__langs">
                     <ul class="sidebar__langs__list">
@@ -133,11 +153,8 @@
     <script src="js/photoswipe-ui-default.min.js"></script> 
     <script src="js/photoswipe-gallery.js"></script>
     <?php endif; ?>
+    <script src="js/anim.js"></script>
     <script src="js/main.js"></script>
-
-    <?php } else {
-        require './admin/index.php';
-    } ?>
 </body>
 </html>
 
