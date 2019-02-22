@@ -167,12 +167,12 @@
     <?php 
     if ($way["page"] == 'folio'):
     ?>
-    <script src="js/photoswipe.min.js"></script>
-    <script src="js/photoswipe-ui-default.min.js"></script> 
-    <script src="js/photoswipe-gallery.js"></script>
+    <script src="http://webrave/js/photoswipe.min.js"></script>
+    <script src="http://webrave/js/photoswipe-ui-default.min.js"></script> 
+    <script src="http://webrave/js/photoswipe-gallery.js"></script>
     <?php endif; ?>
-    <script src="js/anim.js"></script>
-    <script src="js/main.js"></script>
+    <script src="http://webrave/js/anim.js"></script>
+    <script src="http://webrave/js/main.js"></script>
 </body>
 </html>
 
