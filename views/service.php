@@ -1,5 +1,11 @@
 <?php 
-    $service = $lang['servicesList'][$_GET['id']];
+    $service = null;
+    foreach($lang['servicesList'] as $e) {
+        if ($e["name"] == $way["id"]) {
+            $service = $e;
+            break;
+        }
+    }
 ?>
 
 <div class="header">

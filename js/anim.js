@@ -1,11 +1,11 @@
 
-    let canvas = document.getElementById("animCanvas");
+	let canvas = document.getElementById("animCanvas");
 	let canvasWidth = document.querySelector("#anim").offsetWidth;
 	let canvasHeight = document.querySelector("#anim").offsetHeight;
 	let ctx = canvas.getContext("2d");
 	ctx.canvas.width  = canvasWidth;
-    ctx.canvas.height = canvasHeight;
-    let canvasData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+	ctx.canvas.height = canvasHeight;
+	let canvasData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
     
 	let npoints = 600;
 	let points = new Array(npoints);

@@ -1,39 +1,49 @@
 <?php
-    if (isset($_COOKIE['language'])) {
-        $langCode = $_COOKIE['language'];
-    } else {
-        $langCode = 'ru';
-    }
+    include 'route.php';
+
+    // it returns associative array with keys: language, page, id
+    $way = parse($_SERVER['REQUEST_URI']);
+
+    $langCode = $way["language"];
+
     require './content/lang_'.$langCode.'.php';
 
-    switch ($_SERVER['REQUEST_URI']) {
-        case '/':
-            $title = $lang['title'];
-            $desc = $lang['mainDescription'];
-            break;
+    switch ($way["page"]) {
         case '':
             $title = $lang['title'];
             $desc = $lang['mainDescription'];
             break;
-        case '/services':
+        case 'services':
+        if ($way["id"] == "") {
             $title = $lang['services'];
             $desc = $lang['servicesDescription'];
-            break;
-        case '/folio':
-            $title = $lang['folio'];
-            $desc = $lang['folioDescription'];
-            break;
-        case '/contacts':
-            $title = $lang['contacts'];
-            $desc = $lang['contactsDescription'];
-            break;
-        default:
-            if(isset($_GET['id'])) {
-                $title = $lang['servicesList'][$_GET['id']]['title'];
+        } else {
+            $serviceItem = null;
+            foreach($lang['servicesList'] as $e) {
+                if ($e["name"] == $way["id"]) {
+                    $serviceItem = $e;
+                }
+            }
+            if (isset($serviceItem)) {
+                $title = $serviceItem['title'];
+                $desc = $serviceItem['metaDescription'];
             } else {
                 $title = $lang['error'];
                 $desc = $lang['errorDescription'];
             }
+        }
+            break;
+        case 'folio':
+            $title = $lang['folio'];
+            $desc = $lang['folioDescription'];
+            break;
+        case 'contacts':
+            $title = $lang['contacts'];
+            $desc = $lang['contactsDescription'];
+            break;
+        default:
+            $title = $lang['error'];
+            $desc = $lang['errorDescription'];
             break;
     };
 ?>
@@ -70,28 +80,36 @@
 
         <main class="content">
             <?php 
-                switch ($_SERVER['REQUEST_URI']) {
-                    case '/':
-                        require './views/main.php';
-                        break;
+                switch ($way["page"]) {
                     case '':
                         require './views/main.php';
                         break;
-                    case '/services':                
-                        require './views/services.php';                            
+                    case 'services':                
+                        if ($way["id"] == "") {
+                            require './views/services.php';
+                        } else {
+                            $serviceItem = null;
+                            foreach($lang['servicesList'] as $e) {
+                                if ($e["name"] == $way["id"]) {
+                                    $serviceItem = $e;
+                                    break;
+                                }
+                            }
+                            if (isset($serviceItem)) {
+                                require './views/service.php';
+                            } else {
+                                require './views/404.php';
+                            }
+                        }
                         break;
-                    case '/folio':
+                case 'folio':
                         require './views/folio.php';
                         break;
-                    case '/contacts':
+                    case 'contacts':
                         require './views/contacts.php';
                         break;
                     default:
-                        if(isset($_GET['id'])) {
-                            require './views/service.php';
-                        } else {
-                            require './views/404.php';
-                        }
+                        require './views/404.php';
                         break;
                 };
             ?>
@@ -106,10 +124,10 @@
                 <div class="sidebar__langs">
                     <ul class="sidebar__langs__list">
                         <li class="sidebar__langs__item">
-                            <a href="#" data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
+                            <a href=<?=changeLanguage($way, "en"); ?> data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
                         </li>
                         <li class="sidebar__langs__item">
-                            <a href="#" data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
+                            <a href=<?=changeLanguage($way, "ru"); ?> data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
                         </li>                    
                     </ul>
                 </div>
@@ -118,7 +136,7 @@
                     <ul class="sidebar__menu__list">
                         <?php foreach($lang['menu'] as $menuItem): ?>
                             <li class="sidebar__menu__item">
-                                <a href="<?= $menuItem["url"] ?>" class="sidebar__menu__link <?= $menuItem["url"] == $_SERVER['REQUEST_URI'] ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
+                                <a href="<?= changePage($way, $menuItem["url"]) ?>" class="sidebar__menu__link <?= $menuItem["url"] == "/".$way["page"] ? "sidebar__menu__link--active" : ""?>"><?= $menuItem["name"] ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -147,7 +165,7 @@
     </div>
 
     <?php 
-    if ($_SERVER['REQUEST_URI'] == '/folio'):
+    if ($way["page"] == 'folio'):
     ?>
     <script src="js/photoswipe.min.js"></script>
     <script src="js/photoswipe-ui-default.min.js"></script> 

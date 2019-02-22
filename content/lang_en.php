@@ -45,6 +45,7 @@
         'servicesList' => [ // Услуги
             [
                 'id' => 0,
+                'name' => 'landing',
                 'title' => 'Creation and development of Landing page',
                 'text' => '<strong>Landing page</strong> is a simple site where all information is placed on one page and can be viewed by scrolling, such sites are usually used for quick advertising or selling any goods and services. The site may contain a block with information reviews, sponsors, a small gallery, a form of communication and various chips from our designers to attract the attention of customers.',
                 'deadline' => 'The term of the Landing page development is from 7 to 14 days.',
@@ -55,6 +56,7 @@
             ],
             [
                 'id' => 1,
+                'name' => 'website',
                 'title' => 'Creation and development of brochure website',
                 'text' => '<strong>Brochure website</strong> is not a complex multi-page website describing the activities of your company and a variety of services, the site will include a gallery, feedback form, from 5 to 10 pages describing your activities and services. Thanks to the creativity of our designers, you have received the most modern and memorable website design.',
                 'deadline' => 'The term of the brochure website development is from 7 to 14 days.',
@@ -65,6 +67,7 @@
             ],
             [
                 'id' => 2,
+                'name' => 'corporate',
                 'title' => 'Creation and development of corporate website',
                 'text' => '<strong>A corporate or enterprise site</strong> is an average project with a large number of pages on which you can place information about your company, catalogs, services, products, galleries, news, contact forms, feedback systems, online chats and all this wrapped in modern design, and high-quality development you will receive a site that displays all the advantages of your company.',
                 'deadline' => 'The term of the corporate website development is from 1 to 3 weeks.',
@@ -75,6 +78,7 @@
             ],
             [
                 'id' => 3,
+                'name' => 'eshop',
                 'title' => 'Creation and development of e-shop',
                 'text' => '<strong>E-shop</strong> is a large project with extensive functionality, different types of filters, product card, shopping cart and different payment means. If you decide to occupy your niche in the field of sales of goods and services on the Internet, our design team will provide your store with an excellent design, and programmers with lightning-fast work speed and first-class protection.',
                 'deadline' => 'The term of the e-shop website development is from 2 to 4 weeks.',

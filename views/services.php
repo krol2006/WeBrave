@@ -12,7 +12,7 @@
         <div class="services__item">
             <div class="services__item__layout">
                 <div class="services__item__title">
-                    <a href='?id=<?= $servicesItem["id"]; ?>'><?= $servicesItem['title']; ?></a>
+                    <a href='/<?= $servicesItem["name"]; ?>'><?= $servicesItem['title']; ?></a>
                 </div>
 
                 <div class="services__item__text">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="services__item__more">
-                <a href='?id=<?= $servicesItem["id"]; ?>'><?= $lang['more']; ?></a>
+                <a href='<?= changeId($way, $servicesItem["name"]); ?>'><?= $lang['more']; ?></a>
             </div>
         </div>
         <?php endforeach; ?>
