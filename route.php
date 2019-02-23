@@ -59,6 +59,12 @@
     return $path;
   }
 
+  
+  function mainPage($language) {
+    return "/".$language;
+  }
+
+
   function changeLanguage($way, $language) {
     if ($way["id"] != "") {
       return "/".$language."/".$way["page"]."/".$way["id"];

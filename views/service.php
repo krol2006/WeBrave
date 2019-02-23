@@ -1,4 +1,7 @@
 <?php 
+    $way = parse($_SERVER['REQUEST_URI']);
+    $langCode = $way["language"];
+
     $service = null;
     foreach($lang['servicesList'] as $e) {
         if ($e["name"] == $way["id"]) {
@@ -10,7 +13,7 @@
 
 <div class="header">
     <div class="header__logo">
-        <a href="/" class="header__logo__link">webrave</a>
+        <a href="<?= mainPage($langCode); ?>" class="header__logo__link">webrave</a>
     </div>
 
     <h1 class="header__title"><a href="<?= $_SERVER['HTTP_REFERER'] ?>" class="header__title__back"></a><?= $service['title']; ?></h1>
