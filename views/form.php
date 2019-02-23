@@ -1,9 +1,5 @@
 <?php
-    if (isset($_COOKIE['language'])) {
-        $langCode = $_COOKIE['language'];
-    } else {
-        $langCode = 'ru';
-    }
+    $langCode = $_POST['language'];
     require '../content/lang_'.$langCode.'.php';
 
     $name = "Имя:". ' ' .$_POST['name'];
