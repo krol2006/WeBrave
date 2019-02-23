@@ -58,7 +58,7 @@
     <meta name="description" content="<?= $desc; ?>">
     <?php endif; ?>
     <title><?= 'Webrave | '.$title; ?></title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="http://webrave.cz/favicon.ico">
     <link rel="stylesheet" href="/css/init.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134637839-1"></script>
