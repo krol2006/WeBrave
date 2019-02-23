@@ -127,6 +127,9 @@
                             <a href=<?=changeLanguage($way, "en"); ?> data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
                         </li>
                         <li class="sidebar__langs__item">
+                            <a href=<?=changeLanguage($way, "cz"); ?> data-lang="cz" class="sidebar__langs__link <?= $langCode == "cz" ? "sidebar__langs__link--active" : ""?> ">cz</a>
+                        </li>
+                        <li class="sidebar__langs__item">
                             <a href=<?=changeLanguage($way, "ru"); ?> data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>
                         </li>                    
                     </ul>
