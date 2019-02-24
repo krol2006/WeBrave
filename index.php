@@ -58,7 +58,7 @@
     <meta name="description" content="<?= $desc; ?>">
     <?php endif; ?>
     <title><?= 'Webrave | '.$title; ?></title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="http://webrave.cz/favicon.ico">
     <link rel="stylesheet" href="/css/init.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134637839-1"></script>
@@ -125,6 +125,9 @@
                     <ul class="sidebar__langs__list">
                         <li class="sidebar__langs__item">
                             <a href=<?=changeLanguage($way, "en"); ?> data-lang="en" class="sidebar__langs__link <?= $langCode == "en" ? "sidebar__langs__link--active" : ""?> ">en</a>
+                        </li>
+                        <li class="sidebar__langs__item">
+                            <a href=<?=changeLanguage($way, "cz"); ?> data-lang="cz" class="sidebar__langs__link <?= $langCode == "cz" ? "sidebar__langs__link--active" : ""?> ">cz</a>
                         </li>
                         <li class="sidebar__langs__item">
                             <a href=<?=changeLanguage($way, "ru"); ?> data-lang="ru" class="sidebar__langs__link <?= $langCode == "ru" ? "sidebar__langs__link--active" : ""?>">ru</a>

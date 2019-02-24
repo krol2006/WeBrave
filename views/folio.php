@@ -1,6 +1,11 @@
+<?php 
+    $way = parse($_SERVER['REQUEST_URI']);
+    $langCode = $way["language"];
+?>
+
 <div class="header">
     <div class="header__logo">
-        <a href="/" class="header__logo__link">webrave</a>
+        <a href="<?= mainPage($langCode); ?>" class="header__logo__link">webrave</a>
     </div>
 
     <h1 class="header__title"><?= $lang['folio'] ?></h1>

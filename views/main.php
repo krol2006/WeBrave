@@ -1,6 +1,11 @@
+<?php 
+    $way = parse($_SERVER['REQUEST_URI']);
+    $langCode = $way["language"];
+?>
+
 <div class="intro">
     <div class="intro__logo">
-        <a href="/" class="intro__logo__link">
+        <a href="<?= mainPage($langCode); ?>" class="intro__logo__link">
             <img class="intro__logo__image" src="/images/logo_img.svg" alt="Logo">
         </a>
     </div>
@@ -10,7 +15,7 @@
 
 <div class="header">
     <div class="header__logo">
-        <a href="/" class="header__logo__link">webrave</a>
+        <a href="<?= mainPage($langCode); ?>" class="header__logo__link">webrave</a>
     </div>
 
     <h1 class="header__title"><?= $lang['about'] ?></h1>

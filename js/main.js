@@ -52,8 +52,17 @@ window.onload = function() {
                 return;
             }
 
+            const language = ['/en', '/ru', '/cz'].reduce((lang, curr) => {
+                if (window.location.href.indexOf(curr) !== -1) {
+                    return curr;
+                }
+                return lang;
+            }, '/ru');
+
+            formData.set("language", language.substr(1, 2));
+
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", 'views/form.php', true);
+            xhr.open("POST", 'http://webrave.cz/views/form.php', true);
             xhr.onreadystatechange = function() {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                     form.innerHTML = this.responseText;
