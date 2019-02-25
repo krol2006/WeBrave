@@ -91,7 +91,7 @@
         'SEOservice' => [
             'id' => 4,
             'title' => 'Propagace a SEO-optimalizace webových stránek ',
-            'text' => 'K čemu je web, pokud on jako tisíc ostatních bude visět na internetu? Objednej optimalizace u nás, buď v TOP ve vyhledaváči!',
+            'text' => 'K čemu je web, pokud on jako tisíc ostatních bude visět na internetu? Objednej optimalizaci u nás, buď v TOP ve vyhledávači!',
             'metaDescription' => 'Meta description'
         ],
         'portfolioItems' => [
