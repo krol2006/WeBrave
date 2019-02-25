@@ -56,7 +56,7 @@
             ],
             [
                 'id' => 1,
-                'name' => 'website',
+                'name' => 'brochure_website',
                 'title' => 'Creation and development of brochure website',
                 'text' => '<strong>Brochure website</strong> is not a complex multi-page website describing the activities of your company and a variety of services, the site will include a gallery, feedback form, from 5 to 10 pages describing your activities and services. Thanks to the creativity of our designers, you have received the most modern and memorable website design.',
                 'deadline' => 'The term of the brochure website development is from 7 to 14 days.',
